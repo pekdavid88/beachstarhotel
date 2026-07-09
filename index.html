@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Beállítások -->
+    <title>Beach Star Hotel - Sidari, Corfu | Family Run Hotel Across the Beach</title>
+    <meta name="description" content="Welcome to Beach Star Hotel in Sidari, Corfu. A peaceful, family-run resort located just across from the beach and a 5-minute walk to the main street.">
+    <link class="canonical" href="https://www.beachstarhotel.com/">
+
+    <!-- Tailwind CSS v3 Play CDN & Custom Beach-Star Theme -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-beach': '#0b3c49', // Mély tengeri teal kék
+                        'accent-gold': '#c5a059',    // Elegáns homok-arany tónus
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>">
+
+    <!-- Google Strukturált Adatok (Hotel Rich Snippet) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Beach Star Hotel",
+      "description": "A well established family-run hotel in Sidari, Corfu, situated just across from the beach with its own private swimming pool and snack bar.",
+      "url": "https://www.beachstarhotel.com/",
+      "image": [
+        "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sidari",
+        "postalCode": "49081",
+        "addressLocality": "Corfu",
+        "addressCountry": "GR"
+      },
+      "telephone": "+302663095276",
+      "email": "info@beachstarhotel.com",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "3"
+      }
+    }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0b3c49; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased font-sans">
+
+    <!-- Navigáció -->
+    <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center" aria-label="Main Navigation">
+            <a href="#hero" class="text-2xl font-bold text-primary-beach tracking-wide font-serif flex items-center gap-2">
+                <span>Beach Star Hotel</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="#about" class="text-gray-600 hover:text-primary-beach transition duration-300 font-medium">About Us</a>
+                <a href="#amenities" class="text-gray-600 hover:text-primary-beach transition duration-300 font-medium">Amenities</a>
+                <a href="#rooms" class="text-gray-600 hover:text-primary-beach transition duration-300 font-medium">Rooms & Rates</a>
+                <a href="#gallery" class="text-gray-600 hover:text-primary-beach transition duration-300 font-medium">Photo Gallery</a>
+                <a href="#location" class="text-gray-600 hover:text-primary-beach transition duration-300 font-medium">Location</a>
+                <a href="#contact" class="bg-accent-gold hover:bg-opacity-90 text-white px-5 py-2 rounded-full text-sm font-semibold transition duration-300">Book Now</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-beach focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobil Menü -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-100 py-2">
+            <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-primary-beach font-medium">About Us</a>
+            <a href="#amenities" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-primary-beach font-medium">Amenities</a>
+            <a href="#rooms" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-primary-beach font-medium">Rooms & Rates</a>
+            <a href="#gallery" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-primary-beach font-medium">Photo Gallery</a>
+            <a href="#location" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-primary-beach font-medium">Location</a>
+            <a href="#contact" class="block px-4 py-2 text-accent-gold font-bold hover:bg-gray-50">Book Now</a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <img src="https://static.wixstatic.com/media/5b94e9_5be0fc89163040f8badd69e21e5fd463.jpg/v1/fill/w_3219,h_984,al_c,q_90,enc_avif,quality_auto/5b94e9_5be0fc89163040f8badd69e21e5fd463.jpg"
+                 alt="Luxury beachfront resort and pool area"
+                 class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" decoding="async">
+            <div class="absolute inset-0 bg-black/40"></div>
+            
+            <div class="relative z-10 text-white px-6 max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold font-serif leading-tight mb-4 drop-shadow-md">Relaxing Beachside Getaway</h1>
+                <p class="text-xl md:text-2xl mb-8 font-light drop-shadow-sm">Welcome to Beach Star Hotel in Sidari, Corfu</p>
+                <a href="#contact" class="inline-block bg-accent-gold hover:bg-opacity-90 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">Book Direct & Save</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 md:py-24 bg-slate-50 scroll-mt-20">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <h2 class="text-4xl md:text-5xl font-bold font-serif text-center mb-12 text-primary-beach">About Beach Star Hotel</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <p class="text-lg leading-relaxed mb-6 text-gray-700">
+                            The <strong>Beach Star Hotel</strong> is a well-established, family-run hotel dedicated to providing unforgettable holiday experiences. Set in a peaceful, serene area, it offers the ultimate balance: just a <strong>five-minute walk to Sidari main street</strong> where you will find plenty to do and see, but far enough out that you aren't bothered by any noise.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-6 text-gray-700">
+                            Our hotel is situated <strong>just across from the pristine beach</strong> and features its own private swimming pool with plenty of free sunbeds to choose from. Delicious food and snacks are served all day long, either inside the hotel premises or right across the road directly by the refreshing pool area. If you are looking for a completely relaxing break, look no further!
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 w-full">
+                        <img src="https://static.wixstatic.com/media/5b94e9_ae00fd80d055445aa6ee82d36efb4a6a~mv2_d_3500_2625_s_4_2.jpg/v1/fill/w_2378,h_1783,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/5b94e9_ae00fd80d055445aa6ee82d36efb4a6a~mv2_d_3500_2625_s_4_2.jpg"
+                             alt="Sun loungers by the crystal clear hotel pool" class="rounded-xl shadow-xl w-full h-auto object-cover aspect-[4/3]" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amenities Section -->
+        <section id="amenities" class="py-16 md:py-24 bg-white scroll-mt-20">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <h2 class="text-4xl md:text-5xl font-bold font-serif text-center mb-4 text-primary-beach">Hotel Amenities</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-xl mx-auto">Everything you need for comfort, entertainment, and relaxation during your stay.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="p-6 bg-slate-50 rounded-xl text-center shadow-sm border border-gray-100">
+                        <div class="text-accent-gold text-3xl mb-3">🍹</div>
+                        <h3 class="font-semibold text-primary-beach">Pool Bar</h3>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl text-center shadow-sm border border-gray-100">
+                        <div class="text-accent-gold text-3xl mb-3">🔒</div>
+                        <h3 class="font-semibold text-primary-beach">Free Safe Boxes</h3>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl text-center shadow-sm border border-gray-100">
+                        <div class="text-accent-gold text-3xl mb-3">🎱</div>
+                        <h3 class="font-semibold text-primary-beach">Pool Table</h3>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl text-center shadow-sm border border-gray-100">
+                        <div class="text-accent-gold text-3xl mb-3">🍔</div>
+                        <h3 class="font-semibold text-primary-beach">Snack Bar</h3>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl text-center shadow-sm border border-gray-100">
+                        <div class="text-accent-gold text-3xl mb-3">📶</div>
+                        <h3 class="font-semibold text-primary-beach">Free WiFi</h3>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl text-center shadow-sm border border-gray-100">
+                        <div class="text-accent-gold text-3xl mb-3">📺</div>
+                        <h3 class="font-semibold text-primary-beach">Sky TV</h3>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl text-center shadow-sm border border-gray-100">
+                        <div class="text-accent-gold text-3xl mb-3">🏊</div>
+                        <h3 class="font-semibold text-primary-beach">Swimming Pool</h3>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl text-center shadow-sm border border-gray-100">
+                        <div class="text-accent-gold text-3xl mb-3">📚</div>
+                        <h3 class="font-semibold text-primary-beach">Library / Book Exchange</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rooms & Rates Section -->
+        <section id="rooms" class="py-16 md:py-24 bg-slate-50 scroll-mt-20">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <h2 class="text-4xl md:text-5xl font-bold font-serif text-center mb-12 text-primary-beach">Rooms & Rates</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col justify-between border border-gray-100">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Beautiful hotel studio interior" class="w-full h-64 object-cover">
+                            <div class="p-8">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-2xl font-bold font-serif text-primary-beach">Studio</h3>
+                                    <span class="bg-primary-beach text-white text-xs px-3 py-1 rounded-full font-medium">Sleeps up to 4 guests</span>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed mb-6">Comfortable, sun-lit studio units featuring flexible spatial arrangements, perfect for small groups or couples.</p>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-0 border-t border-gray-100 bg-slate-50/50">
+                            <div class="text-sm text-gray-600 space-y-1 mb-6 mt-4">
+                                <p>• Rates are per room per night based on <strong>2 guests</strong>.</p>
+                                <p>• Extra guest supplement: <strong>+10€ per night</strong>.</p>
+                                <p class="text-emerald-700 font-medium">• Children under 6 years of age stay FREE.</p>
+                            </div>
+                            <a href="#contact" class="block w-full text-center bg-primary-beach hover:bg-opacity-90 text-white font-semibold py-3 rounded-xl transition duration-300">Book Studio Now</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col justify-between border border-gray-100">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="Spacious two bedroom hotel suite" class="w-full h-64 object-cover">
+                            <div class="p-8">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-2xl font-bold font-serif text-primary-beach">Two Bedroom Apartment</h3>
+                                    <span class="bg-primary-beach text-white text-xs px-3 py-1 rounded-full font-medium">Sleeps up to 5 guests</span>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed mb-6">Generous family layout providing separate bedrooms, extra storage, and private lounge areas for family stays.</p>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-0 border-t border-gray-100 bg-slate-50/50">
+                            <div class="text-sm text-gray-600 space-y-1 mb-6 mt-4">
+                                <p>• Rates are per room per night based on <strong>4 guests</strong>.</p>
+                                <p>• Extra guest supplement: <strong>+10€ per night</strong>.</p>
+                                <p class="text-emerald-700 font-medium">• Children under 6 years of age stay FREE.</p>
+                            </div>
+                            <a href="#contact" class="block w-full text-center bg-primary-beach hover:bg-opacity-90 text-white font-semibold py-3 rounded-xl transition duration-300">Book Apartment Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Photo Gallery Section -->
+        <section id="gallery" class="py-16 md:py-24 bg-white scroll-mt-20">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold font-serif text-center mb-4 text-primary-beach">Photo Gallery</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-md mx-auto">Get a glimpse of our pristine resort, welcoming rooms, and breathtaking beachfront views.</p>
+                
+                <div class="flex flex-wrap justify-center gap-2 mb-12">
+                    <button onclick="filterGallery('all')" id="filter-all" class="px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-primary-beach text-white shadow-md">All</button>
+                    <button onclick="filterGallery('pool')" id="filter-pool" class="px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">Pool & Bar</button>
+                    <button onclick="filterGallery('rooms')" id="filter-rooms" class="px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">Rooms & Apartments</button>
+                    <button onclick="filterGallery('common')" id="filter-common" class="px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">Beach & Surroundings</button>
+                </div>
+
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                </div>
+            </div>
+        </section>
+
+        <div id="gallery-modal" class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex flex-col justify-center items-center" role="dialog" aria-modal="true" aria-label="Image lightbox">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-4xl hover:text-accent-gold transition-colors focus:outline-none p-2">&times;</button>
+            <button onclick="prevImage()" class="absolute left-4 sm:left-6 text-white text-3xl hover:text-accent-gold transition-colors bg-white/10 hover:bg-white/20 p-4 rounded-full focus:outline-none">&#10094;</button>
+            <button onclick="nextImage()" class="absolute right-4 sm:right-6 text-white text-3xl hover:text-accent-gold transition-colors bg-white/10 hover:bg-white/20 p-4 rounded-full focus:outline-none">&#10095;</button>
+            
+            <div class="max-w-4xl max-h-[85vh] px-4 flex flex-col items-center">
+                <img id="modal-image" src="" alt="Gallery view" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl border border-white/10" />
+                <p id="modal-caption" class="text-white text-base sm:text-lg mt-4 font-semibold text-center"></p>
+                <div class="flex items-center gap-2 mt-2">
+                    <span id="modal-badge" class="text-slate-300 text-[10px] uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full font-medium"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Section -->
+        <section id="location" class="py-16 md:py-24 bg-slate-50 scroll-mt-20">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold font-serif text-center mb-6 text-primary-beach">Location & Map</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div class="space-y-5 text-base leading-relaxed text-gray-700">
+                        <h3 class="text-2xl font-bold font-serif text-primary-beach">Discover Unique Sidari</h3>
+                        <p>Sidari has grown into a major commercial holiday resort. What truly makes Sidari unique is the soft sandstone rock erosion that has sculpted beautiful, intimate small bays.</p>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 grid grid-cols-2 gap-4 mt-6">
+                            <div><p class="text-xs uppercase tracking-wider font-semibold text-gray-400">✈️ Airport</p><p class="text-lg font-bold text-primary-beach">36 km</p></div>
+                            <div><p class="text-xs uppercase tracking-wider font-semibold text-gray-400">🏛️ Corfu Town</p><p class="text-lg font-bold text-primary-beach">35 km</p></div>
+                            <div><p class="text-xs uppercase tracking-wider font-semibold text-gray-400">🏙️ Sidari Center</p><p class="text-lg font-bold text-primary-beach">400 m</p></div>
+                            <div><p class="text-xs uppercase tracking-wider font-semibold text-gray-400">🩺 Medical Doctors</p><p class="text-lg font-bold text-primary-beach">300 m</p></div>
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <div class="aspect-video rounded-2xl shadow-xl overflow-hidden bg-gray-100 h-[360px]">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2287.5165450670934!2d19.71142687908886!3d39.7885696057428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135b4ee0a9caa145%3A0x82d0b6893f7587ab!2sBeach%20Star%20Hotel!5e1!3m2!1shu!2ssk!4v1783614882272!5m2!1shu!2ssk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Beach Star Hotel location in Sidari"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Booking Section -->
+<section id="contact" class="py-16 md:py-24 bg-white scroll-mt-20">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <h2 class="text-4xl md:text-5xl font-bold font-serif text-center mb-12 text-primary-beach">Contact & General Enquiries</h2>
+        
+        <div class="bg-slate-50 rounded-3xl shadow-xl p-8 md:p-12 grid md:grid-cols-5 gap-12">
+            <div class="md:col-span-2 space-y-8">
+                <div>
+                    <h3 class="text-2xl font-semibold font-serif mb-4 text-primary-beach">Contact Details</h3>
+                    <p class="text-gray-700 mb-2"><strong>Beach Star Hotel</strong></p>
+                    <p class="text-gray-600 mb-4">Sidari 49081<br>Corfu, Greece</p>
+                    
+                    <div class="space-y-2 text-gray-700">
+                        <p><strong>Email:</strong> <a href="mailto:info@beachstarhotel.com" class="hover:text-accent-gold transition">info@beachstarhotel.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+302663095276" class="hover:text-accent-gold transition">0030 26630 95276</a></p>
+                        <p><strong>Fax:</strong> 0030 26630 95976</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="text-2xl font-semibold font-serif mb-6 text-primary-beach">Booking Request</h3>
+                <form action="https://formspree.io/f/mgojjgnz" method="POST" id="contact-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- A form mezői változatlanok -->
+                    <div class="sm:col-span-2">
+                        <label for="name" class="block text-gray-700 text-sm font-semibold mb-1">Full Name *</label>
+                        <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-beach" required>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="email" class="block text-gray-700 text-sm font-semibold mb-1">Email Address *</label>
+                        <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-beach" required>
+                    </div>
+                    <div>
+                        <label for="guests" class="block text-gray-700 text-sm font-semibold mb-1">Number of Guests *</label>
+                        <input type="number" id="guests" name="guests" min="1" max="5" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-beach" required>
+                    </div>
+                    <div>
+                        <label for="nights" class="block text-gray-700 text-sm font-semibold mb-1">Nights *</label>
+                        <input type="number" id="nights" name="nights" min="1" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-beach" required>
+                    </div>
+                    <div>
+                        <label for="arrival" class="block text-gray-700 text-sm font-semibold mb-1">Arrival Date *</label>
+                        <input type="date" id="arrival" name="arrival" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-beach" required>
+                    </div>
+                    <div>
+                        <label for="room_type" class="block text-gray-700 text-sm font-semibold mb-1">Accommodation *</label>
+                        <select id="room_type" name="room_type" class="w-full border border-gray-300 rounded-lg py-2.5 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-beach" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="studio">Studio Unit</option>
+                            <option value="apartment">Two Bedroom Apartment</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="message" class="block text-gray-700 text-sm font-semibold mb-1">Comments / General Enquiries</label>
+                        <textarea id="message" name="message" rows="3" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-beach"></textarea>
+                    </div>
+                    <div class="sm:col-span-2 mt-2">
+                        <button type="submit" class="w-full sm:w-auto bg-accent-gold hover:bg-opacity-90 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                            Send Booking Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="bg-gray-950 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6"><a href="#hero" class="text-3xl font-bold font-serif tracking-wide text-white">Beach Star Hotel</a></div>
+            <p class="text-gray-500 text-sm">&copy; <span id="current-year"></span> Beach Star Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) targetElement.scrollIntoView({ behavior: 'smooth' });
+                const mobileMenu = document.getElementById('mobile-menu');
+                const menuButton = document.getElementById('mobile-menu-button');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        let currentLang = 'EN';
+        const galleryItems = [
+            { id: 1, category: "common", src: "https://static.wixstatic.com/media/5b94e9_6162d7b90d0249ceaed57ed7aec6187d.jpg/v1/fill/w_3065,h_1784,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/5b94e9_6162d7b90d0249ceaed57ed7aec6187d.jpg", captionGR: "Η πρόσοψη του ξενοδοχείου Beach Star", captionEN: "Beach Star Hotel Resort Front View" },
+            { id: 2, category: "pool", src: "https://static.wixstatic.com/media/5b94e9_ee9ea4a4f3b041319d31b23c8ad11bed~mv2_d_7250_5264_s_4_2.jpg/v1/fill/w_2457,h_1784,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/5b94e9_ee9ea4a4f3b041319d31b23c8ad11bed~mv2_d_7250_5264_s_4_2.jpg", captionGR: "Η κρυστάλλινη κεντρική μας πισίνα", captionEN: "Our sparkling central swimming pool" },
+            { id: 3, category: "rooms", src: "https://static.wixstatic.com/media/5b94e9_5eb7dcb2530370f4e2b049201d2a9f75.jpg/v1/fill/w_2808,h_1860,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/5b94e9_5eb7dcb2530370f4e2b049201d2a9f75.jpg", captionGR: "Ευρύχωρο και άνετο εσωτερικό Studio", captionEN: "Comfortable and bright Studio unit setup" },
+            { id: 4, category: "rooms", src: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80", captionGR: "Ευρύχωρο διαμέρισμα δύο υπνοδωματίων", captionEN: "Generous Two Bedroom Apartment layout" },
+            { id: 5, category: "common", src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80", captionGR: "Η καταπληκτική παραλία του Σιδαρίου ακριβώς απέναντι", captionEN: "Beautiful Sidari beach front just across the road" },
+            { id: 6, category: "pool", src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80", captionGR: "Γευστικά σνακ και δροσερά ποτά", captionEN: "Delicious snacks and experiences at the bar" },
+            { id: 7, category: "pool", src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80", captionGR: "Δωρεάν ξαπλώστρες για απόλυτη χαλάρωση", captionEN: "Relaxing sunbeds area by the pool" },
+            { id: 8, category: "pool", src: "https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?auto=format&fit=crop&w=800&q=80", captionGR: "Βραδινή ατμόσφαιρα δίπλα στην πισίνα", captionEN: "Evening ambient vibes poolside" }
+        ];
+
+        let currentFilter = 'all';
+        let lightboxIndex = 0;
+        let filteredItems = [...galleryItems];
+
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            filteredItems = galleryItems.filter(item => currentFilter === 'all' || item.category === currentFilter);
+            filteredItems.forEach((item, index) => {
+                const caption = currentLang === 'GR' ? item.captionGR : item.captionEN;
+                let badgeText = '';
+                if (item.category === 'pool') badgeText = currentLang === 'GR' ? 'Πισίνα & Μπαρ' : 'Pool & Bar';
+                else if (item.category === 'rooms') badgeText = currentLang === 'GR' ? 'Δωμάτια' : 'Rooms';
+                else badgeText = currentLang === 'GR' ? 'Περιβάλλον' : 'Surroundings';
+                const card = document.createElement('div');
+                card.className = "group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col aspect-square relative";
+                card.onclick = () => openLightbox(index);
+                card.innerHTML = `<img src="${item.src}" alt="${caption}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+                        <span class="text-[10px] uppercase tracking-wider text-accent-gold font-bold bg-slate-900/60 backdrop-blur-sm self-start px-2.5 py-0.5 rounded mb-1.5">${badgeText}</span>
+                        <p class="text-white text-xs sm:text-sm font-medium truncate">${caption}</p>
+                    </div>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterGallery(category) {
+            currentFilter = category;
+            ['all', 'pool', 'rooms', 'common'].forEach(cat => {
+                const btn = document.getElementById(`filter-${cat}`);
+                if (!btn) return;
+                btn.className = (cat === category) ? "px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-primary-beach text-white shadow-md" : "px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200";
+            });
+            renderGallery();
+        }
+
+        function openLightbox(index) { lightboxIndex = index; document.getElementById('gallery-modal').classList.remove('hidden'); document.body.classList.add('overflow-hidden'); updateLightboxContent(); }
+        function closeModal() { document.getElementById('gallery-modal').classList.add('hidden'); document.body.classList.remove('overflow-hidden'); }
+        function updateLightboxContent() {
+            const item = filteredItems[lightboxIndex];
+            document.getElementById('modal-image').src = item.src;
+            document.getElementById('modal-caption').innerText = currentLang === 'GR' ? item.captionGR : item.captionEN;
+        }
+        function prevImage() { lightboxIndex = (lightboxIndex - 1 + filteredItems.length) % filteredItems.length; updateLightboxContent(); }
+        function nextImage() { lightboxIndex = (lightboxIndex + 1) % filteredItems.length; updateLightboxContent(); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'ArrowRight') nextImage();
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            renderGallery();
+        });
+    </script>
+</body>
+</html>
